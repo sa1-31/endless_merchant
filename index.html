@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Endless Merchant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <img src="images/endless-logo.png" class="logo-img">
+    <h1>Endless Merchant</h1>
+  </div>
+
+  <button class="wallet-button" onclick="connectWallet()" id="walletBtn">
+    Connect Wallet
+  </button>
+
+  <nav class="center-nav">
+    <button onclick="showView('products')">Products</button>
+   <button onclick="showView('cart')">
+  Cart <span id="cart-count" style="color:#39FF14; font-weight:bold;">0</span>
+   </button>
+    <button onclick="showView('orders')">Orders</button>
+  </nav>
+</header>
+
+<main>
+  <!-- Products -->
+  <div id="productsView" class="products-grid"></div>
+
+  <!-- Cart -->
+  <div id="cartView" class="hidden">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <p id="cartTotal"></p>
+    <button class="neon-button" onclick="openConfirm()">Order Now</button>
+  </div>
+
+  <!-- Orders -->
+  <div id="ordersView" class="hidden">
+    <h2>Your Orders</h2>
+    <div id="ordersList"></div>
+  </div>
+</main>
+
+<!-- Confirm Modal -->
+<div id="confirmModal" class="modal">
+  <div class="modal-box">
+    <h3>Confirm Transaction</h3>
+    <p id="confirmAmount"></p>
+    <div class="modal-actions">
+      <button class="confirm-btn" onclick="confirmOrder()">Confirm</button>
+      <button class="cancel-btn" onclick="closeConfirm()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Made by <strong>Sa1</strong> for Endless Community
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
